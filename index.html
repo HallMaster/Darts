@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎯 Dart Night!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== HOME SCREEN ===== -->
+  <div id="screen-home" class="screen active">
+    <div class="home-hero">
+      <div class="hero-dart">🎯</div>
+      <h1>Dart Night!</h1>
+      <p class="subtitle">Choose your game and let's throw!</p>
+    </div>
+    <div class="game-grid">
+      <button class="game-card" data-game="cricket">
+        <span class="game-icon">🏏</span>
+        <span class="game-name">Cricket</span>
+        <span class="game-desc">Close 15–20 &amp; Bull</span>
+      </button>
+      <button class="game-card" data-game="atw">
+        <span class="game-icon">🌍</span>
+        <span class="game-name">Around the World</span>
+        <span class="game-desc">Hit 1 through Bull in order</span>
+      </button>
+      <button class="game-card" data-game="301">
+        <span class="game-icon">🔢</span>
+        <span class="game-name">301</span>
+        <span class="game-desc">Count down from 301 to zero</span>
+      </button>
+      <button class="game-card" data-game="501">
+        <span class="game-icon">🔢</span>
+        <span class="game-name">501</span>
+        <span class="game-desc">Count down from 501 to zero</span>
+      </button>
+      <button class="game-card" data-game="killer">
+        <span class="game-icon">💀</span>
+        <span class="game-name">Killer Darts</span>
+        <span class="game-desc">Become a killer &amp; eliminate others</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== SETUP SCREEN ===== -->
+  <div id="screen-setup" class="screen">
+    <div class="screen-header">
+      <button class="back-btn" id="setup-back">← Back</button>
+      <h2 id="setup-game-title">Game Setup</h2>
+      <div></div>
+    </div>
+    <div class="setup-content">
+      <div class="player-count-section">
+        <p class="section-label">How many players?</p>
+        <div class="player-count-control">
+          <button class="count-btn" id="remove-player">−</button>
+          <span id="player-count-display">2</span>
+          <button class="count-btn" id="add-player">+</button>
+        </div>
+      </div>
+      <div class="player-names-section">
+        <p class="section-label">Player Names</p>
+        <div id="player-names-list"></div>
+      </div>
+      <button class="btn-primary btn-big" id="start-game">🎯 Let's Play!</button>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="screen-game" class="screen">
+    <div class="screen-header">
+      <button class="back-btn" id="game-back">← Quit</button>
+      <h2 id="game-title">Cricket</h2>
+      <div id="turn-badge" class="turn-badge"></div>
+    </div>
+    <div class="game-layout">
+      <!-- Score Panel -->
+      <div id="score-panel" class="score-panel"></div>
+
+      <!-- Dartboard + Controls -->
+      <div class="board-column">
+        <div class="dartboard-wrap">
+          <svg id="dartboard" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="dart-controls">
+          <div class="dart-tracker" id="dart-tracker">
+            <div class="dart-pip active" id="pip-0"></div>
+            <div class="dart-pip" id="pip-1"></div>
+            <div class="dart-pip" id="pip-2"></div>
+          </div>
+          <div class="control-buttons">
+            <button class="btn-secondary" id="undo-dart">↩ Undo</button>
+            <button class="btn-primary" id="end-turn">End Turn →</button>
+          </div>
+        </div>
+        <div id="game-message" class="game-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WIN SCREEN ===== -->
+  <div id="screen-win" class="screen">
+    <div id="confetti-container" class="confetti-container"></div>
+    <div class="win-content">
+      <div class="win-trophy">🏆</div>
+      <h1 id="win-headline">Player 1 Wins!</h1>
+      <p id="win-subtitle" class="win-subtitle"></p>
+      <div id="final-scores" class="final-scores"></div>
+      <div class="win-buttons">
+        <button class="btn-primary btn-big" id="play-again">Play Again 🎯</button>
+        <button class="btn-secondary" id="go-home">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dartboard.js"></script>
+  <script src="js/games/cricket.js"></script>
+  <script src="js/games/atw.js"></script>
+  <script src="js/games/x01.js"></script>
+  <script src="js/games/killer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
