@@ -1,5 +1,11 @@
 # 🎯 Dart Night!
 
+This application along with this description were built with the assistance of Claude AI.
+
+The application can be viewed here: https://hallmaster.github.io/Darts/
+
+---
+
 A fun, browser-based darts scoring app. No installation, no account — just open and play.
 
 ## Getting Started
